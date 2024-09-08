@@ -1,0 +1,111 @@
+/* Drawer */
+.drawer_component{
+    width: 240px;
+    height: calc(100vh - 48px);
+    justify-content: flex-end;
+    background-color: #2E2E30;
+    z-index: 100;
+}
+
+.drawer_component.open {
+    transform: translateX(0);
+  }
+  
+  .drawer_component.closed {
+    display: none;
+  }
+
+/* Header Drawer */
+.item_main_navigation{
+    margin: 0 12px 0px 12px;
+    display: flex;
+    align-items: center;
+}
+
+
+.item_main_navigation p{
+    color: white;
+}
+.btn_drawer_click{
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.btn_drawer_click img{
+    margin: 8px;
+}
+
+/* DrawerBody */
+.div_conatiner_drawer_section_sortable{
+    height: 550px;
+    background-color: #2E2E30;
+    overflow-y:scroll;
+    border-top: solid 0.5px rgb(68, 66, 66);
+    border-bottom: solid 0.5px rgb(68, 66, 66);
+}
+.div_conatiner_drawer_section_sortable::-webkit-scrollbar{
+    width: 6px;
+}
+
+.div_conatiner_drawer_section_sortable::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.div_conatiner_drawer_section_sortable::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px; 
+    border: 1px solid transparent;
+
+}
+
+
+.div_title_gr_navigation{
+
+    position: relative;
+    display: flex; 
+    margin: 16px 0 8px 0;
+    flex-direction: row;
+   align-items: center;
+}
+
+.div_title_gr_navigation p{
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+
+.btn_plus{
+    position: absolute;
+    right: 16px;
+}
+
+.btn_browse_team{
+    margin-left: 16px;
+}
+
+/* Bottom Drawer */
+.bottom_drawer_navigation{
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin-right: 0px;
+}
+
+.btn_drawer_email_click{
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid rgb(144, 142, 142);
+    align-items: center;
+}
+
+.btn_drawer_email_click p{
+    margin-left: 8px;
+    color: white;
+}

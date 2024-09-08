@@ -1,0 +1,58 @@
+.container_card_project{
+    flex: 1;
+    margin-right: 8px;
+    padding: 8px;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.head_container_card_project{
+    margin: 12px 0 0 12px;
+    display: flex;
+    align-items: center;
+}
+
+.name_project{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.title_time{
+    font-size: 12px;
+    font-weight: 700;
+    color: #b3afaf;
+    margin-left: 16px;
+}
+
+.head_container_card_project img{
+    margin-left: 16px;
+    width: 10px;
+}
+
+.main_list_container_card_project{
+    flex-grow: 1;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: auto auto;
+    width: 90%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item_in_list_card_project button{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 12px;
+    flex-direction: row;
+}
+
+.item_in_list_card_project button img{
+    height: 50px;
+    margin-right: 8px;
+}
+
+
+
+

@@ -1,0 +1,81 @@
+.container_card_people{
+    flex: 1;
+    padding: 8px;
+    border-radius: 16px;
+    margin-left: 8px;
+    background-color: white;
+}
+
+.head_container_card_people{
+    margin: 12px 0 0 12px;
+    display: flex;
+    align-items: center;
+}
+
+.name_people{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.title_people{
+    font-size: 12px;
+    font-weight: 700;
+    color: #b3afaf;
+    margin-left: 16px;
+}
+
+.head_container_card_people img{
+    margin-left: 16px;
+    width: 10px;
+}
+
+
+.main_list_container_card_people{
+    flex-grow: 1;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: auto auto;
+    width: 90%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.item_in_list_card_people button{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 12px;
+    flex-direction: row;
+}
+
+.item_in_list_card_people button img{
+    height: 50px;
+    margin-right: 8px;
+}
+
+.item_in_list_card_people button div{
+    width: 120px;
+    height: 22px;
+    background-color: #371717;
+    opacity: 0.2;
+    border-radius: 6px;
+}
+
+.gr_button_in_card_people{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.invite_teammates{
+    margin-top: 12px;
+    border: gray solid 1px;
+    border-radius: 6px;
+    width: fit-content;
+    padding: 4px;
+}
+

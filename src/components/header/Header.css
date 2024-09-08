@@ -1,0 +1,82 @@
+.header_main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center;
+    background-color: #363639;
+    height: 48px;
+    width: 100vw;
+    z-index: 1000;
+    padding: 12px 0;
+}
+
+.header_left{
+    display: flex;
+    flex: 1;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_hamberger_menu{
+    height: 24px;
+    margin-left: 16px;
+}
+
+.gr_button_create{
+    height: 32px;
+    display: flex;
+    border: 1px solid #565557;
+    padding: 4px;
+    margin: 18px;
+    border-radius: 20px;
+}
+
+.gr_button_create p{
+    margin:0 4px;
+    color: white;
+}
+
+.header_search{
+    display: flex;
+    height: 32px;
+    width: 480px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border: 1px solid #565557;
+    border-radius: 16px;
+}
+
+.header_search img{
+    margin-left: 4px;
+}
+
+.header_right{
+    display: flex;
+    flex: 1;
+    position: absolute;
+    right: 17px;
+    flex-direction: row;
+    align-items: center ;
+    justify-content: center;
+}
+
+.header_right p{
+    color: white;
+    font-family: Inter;
+    font-weight: 200;
+}
+
+.img_header_avatar{
+    height: 32px;
+}
+
+.Add_billing_info{
+    background-color: #F1BD6C;
+    font-size: 12px;
+    padding: 8px;
+    margin: 0 12px;
+    border-radius: 8px;
+}
