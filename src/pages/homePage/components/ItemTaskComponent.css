@@ -1,11 +1,21 @@
 .item_task_in_stack_direction_row{
     height: 48px;
-    border: 1px solid #565557;
+    border: 1px solid #cdcbd0;
     border-radius: 8px;
     display: flex;
     align-items: center;
     padding: 12px;
     width: 100%;
+}
+
+.item_task_in_stack_direction_row.active {
+    background-color: #f3f4fe; 
+    border-color: #0057ff; 
+  }
+
+.item_task_in_stack_direction_row:hover{
+    border: 1px solid #302f30;
+    padding: 8px;
 }
 
 .is_finish_task{

@@ -1,3 +1,11 @@
+.home_page_context{
+    height: calc(100vh - 48px);
+    flex-grow: 1;
+    /* width: calc(100vw - 240px); */
+    overflow-y: scroll;
+    background-image: url("https://d3ki9tyy5l5ruj.cloudfront.net/obj/a0b52f278bf39ad6bbee745b64865a8cfd5bf4bf/Aqua_background.png");
+}
+
 .background_image_main{
     object-fit: fill;
 }
@@ -26,8 +34,12 @@
     width: 454px;
     height: 48px;
     border-radius: 60px;
-    margin: 16px 0;
-    
+    margin: 16px 0;   
+}
+
+.conatainer_button_achievement_widget:first-child:hover{
+    background-color: aliceblue;
+    border-radius: 4px;
 }
 
 .conatiner_achievement_widget img{

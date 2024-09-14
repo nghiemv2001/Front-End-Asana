@@ -1,21 +1,21 @@
+import { useContext } from "react";
 import DrawerComponent from "../../components/drawer/drawer";
 import Header from "../../components/header/Header";
 import HomeContentTextComponent from "./components/HomeContentTextComponents";
 import "./HomePage.css";
-import { useState } from "react";
+import { DrawerContext } from "../../context/useContext";
 
 
 const HomePage = () => {
-  const [isOpenDrawer, setIsOpenDrawer] = useState(true);
-  console.log("home out", isOpenDrawer);
+  const {isOpenDrawer, setIsOpenDrawer} = useContext(DrawerContext); 
+
   const toggleDrawer = () => {
-    console.log("home", isOpenDrawer);
     setIsOpenDrawer(!isOpenDrawer);
   };
 
   return (
     <>
-      <div className="container">
+      <div className="container_homepage">
         <Header toggleDrawer={toggleDrawer} />
         <div className="wrap_drawer_main_content">
           <DrawerComponent isOpenDrawer={isOpenDrawer} />

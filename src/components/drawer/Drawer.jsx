@@ -13,30 +13,31 @@ import ic_arrow_right from "../../assets/icons/ic_arrow_right.svg";
 import ic_email from "../../assets/icons/ic_email.svg";
 
 import "./Drawer.css";
+import { Link } from "react-router-dom";
 
 
 const DrawerComponent = ({ isOpenDrawer }) => {
-  console.log("drawer", isOpenDrawer)
+
   return (
     <div className={`drawer_component ${isOpenDrawer ? 'open' : 'closed'}`}>
       
       {/* Header drawer */}
       <div className="main_navigation">
         <div className="item_main_navigation">
-          <button className="btn_drawer_click">
+          <Link to={"/"} className="btn_drawer_click">
             <img src={ic_home} />
             <p>Home</p>
-          </button>
+          </Link>
         </div>
         <div className="item_main_navigation">
-          <button className="btn_drawer_click">
+          <Link to={"/task"} className="btn_drawer_click">
             <img src={ic_outline_check} /> <p>My Tasks</p>
-          </button>
+          </Link>
         </div>
         <div className="item_main_navigation">
-          <button className="btn_drawer_click">
+          <Link to={'/inbox'} className="btn_drawer_click">
             <img src={ic_inbox} /> <p>Inbox</p>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -112,7 +113,7 @@ const DrawerComponent = ({ isOpenDrawer }) => {
           <img src={ic_email} />
           <p>Invite Teammates</p>
         </button>
-        <button className="btn_drawer_click">
+        <button className="btn_drawer_click_help_with">
           <p>Help with Invent </p>
         </button>
       </div>

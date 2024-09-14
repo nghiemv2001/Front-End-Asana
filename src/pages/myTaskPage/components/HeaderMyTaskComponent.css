@@ -1,0 +1,81 @@
+
+.cotainer_header_mytask_page{
+    width: 100%;
+    position: relative;
+    padding: 12px 4px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #CFCBCB ;
+}
+
+.ic_avatar_mytask_page{
+    height: 48px;
+    margin-left: 12px;
+}
+
+.component_text_header_mytask_page_icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.component_text_header_mytask_page_icon p{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.component_text_header_mytask_page_icon img{
+    height: 6px;
+    width: 10px;
+    margin-left: 8px;
+}
+.big_content_main_header_mytask_page{
+    margin-left: 20px;
+}
+
+.container_option_select_header_mytask_page button{
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+.button_share_header_mytask{
+    width: 63px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: #CFCBCB solid 1px;
+    border-radius: 6px;
+}
+.button_share_header_mytask img{
+    width: 10px;
+    height: 13px;
+    margin-top: 2px;
+}
+
+.gr_customesize_share_mytask{
+    display: flex;
+    position: absolute;
+    right: 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gr_customesize_share_mytask div{
+    height: 25px;
+    width: 1px;
+    margin: 0 8px;
+    background-color: #CFCBCB;
+}
+
+.button_custome_header_mytask{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.button_custome_header_mytask img{
+    margin-right: 4px;
+    height: 12px;
+}

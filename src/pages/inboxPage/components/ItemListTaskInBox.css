@@ -1,0 +1,82 @@
+.ic_cicle_blue{
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    background-color: #4573D2;
+}
+
+.title_item_list_task{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.img_mark_task_inbox{
+    margin-right: 8px;
+}
+
+.ic_cicle_blue{
+    display: flex;
+    position: absolute;
+    right: 12px
+}
+
+.item_list_task_inbox{
+    height: 128px;
+    padding: 20px;
+    border: 1px solid   #afafb1;
+}
+
+.title_item_list_task p{
+    font-size: 16px;
+    font-weight: 600;
+    color: #6A6868;
+}
+
+.information_task_inbox{
+    border: solid 1px #afafb1;
+    border-radius: 4px;
+    padding: 20px 0;
+    height: 40px;
+    display: flex;
+    position: relative;
+    margin-top: 16px;
+    background-color: #F1F2FC;
+    align-items: center;
+}
+
+.ic_check_item_list_task_inbox{
+    height: 20px;
+    width: 20px;
+    padding: 4px;
+    border-radius: 16px;
+    border: 1px solid gray;
+    margin: 0 8px;
+}
+
+.text_time{
+    display: flex;
+    position: absolute;
+    right: 12px;
+    color: #3B8242;
+}
+
+.details_task_inbox{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap_detail_task_inbox{
+    padding: 20px;
+}
+
+.text_title_name_details_inbox{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.bottom_details_task_inbox{
+    height: 170px;
+    width: 100%;
+    background-color: #4573D2;
+}

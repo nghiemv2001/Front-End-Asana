@@ -1,0 +1,52 @@
+
+.cotainer_header_inbox_page{
+    width: 100%;
+    position: static    ;
+    padding: 12px  4px 20px;
+    height: 74px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #CFCBCB ;
+    
+}
+
+.big_content_main_header_inbox_page {
+    display: flex;
+    position: relative;
+}
+
+.container_option_select_header_inbox_page{
+   display: flex;
+   position: absolute;
+   margin-top: 8px;
+
+}
+
+.button_option_in_inbox_select_active{
+    border-bottom: 3px solid #808080 ;
+    color: #808080;
+    margin: 24px 0;
+}
+
+
+.container_option_select_header_inbox_page button{
+    margin-right: 8px;
+    font-weight: 600;
+     color: #808080;
+}
+
+.big_content_main_header_inbox_page{
+    margin-left: 20px;
+}
+
+.component_text_header_inbox_page_icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.component_text_header_inbox_page_icon p{
+    font-size: 20px;
+    font-weight: 600;
+    color: #808080;
+}

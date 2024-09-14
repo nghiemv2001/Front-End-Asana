@@ -1,11 +1,14 @@
 import "./ContainerCardProject.css";
 import ic_arr_down_gray from "../../../assets/icons/ic_arr_dwon_gray.svg";
 import ic_project from "../../../assets/icons/ic_project_drawer_blue.svg";
-import plus_has_broder_gray from '../../../assets/icons/plus_has_broder_gray.svg';
+import plus_has_broder_gray from "../../../assets/icons/plus_has_broder_gray.svg";
 import ic_project2 from "../../../assets/icons/ic_project_drawer_pink.svg";
 const ContainerCardProject = () => {
   return (
-    <div className="container_card_project">
+    <div
+      className="container_card_project cursor-grab active:animate-pulse active:cursor-grabbing "
+      onDragStart="return false"
+    >
       <div className="head_container_card_project">
         <p className="name_project">Project</p>
         <p className="title_time">Recents</p>
@@ -25,11 +28,11 @@ const ContainerCardProject = () => {
           </button>
         </div>
         <div className="item_in_list_card_project">
-        <button>
-          <img src={ic_project2}/>
-          <p>Create project</p>
-        </button>
-      </div>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
       </div>
     </div>
   );

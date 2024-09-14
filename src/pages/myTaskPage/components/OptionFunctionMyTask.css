@@ -1,0 +1,70 @@
+.slection_option_function_mytask{
+    display: flex;
+    position: relative;
+    padding: 0px 20px;
+}
+
+.gr_button_add_task_in_my_task{
+    display: flex;
+    flex-direction: row;
+}
+
+.header_in_slection_option_function_mytask{
+    display: flex;
+    height: 56px;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: #CFCBCB solid 1px;
+}
+
+.button_add_task_in_header_selection{
+    height: 28px;
+    background-color: #4573D2;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding: 0 4px;
+    color: white;
+}
+
+.button_add_task_in_header_selection img{
+    filter: brightness(0) invert(1);
+}
+
+.button_drop_down_in_header_selection{
+    height: 28px;
+    width: 22px;
+    background-color: #4573D2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: white;
+    margin-left: 2px;
+}
+
+.button_drop_down_in_header_selection img{
+    filter: brightness(0) invert(1);
+}
+
+.gr_btn_option_action_in_my_task{
+    width: 222px;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 24px;
+}
+
+.btn_gr_action_my_task{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.btn_gr_action_my_task img{
+    margin-right: 4px;
+}

@@ -5,11 +5,14 @@ import img_people_2 from "../../../assets/images/main_avatar_2.png";
 import img_people_3 from "../../../assets/images/main_avatar_3.png";
 const ContainerCardPeople = () => {
   return (
-    <div className="container_card_people">
+    <div className="container_card_people"  onDragStart="return false">
       <div className="head_container_card_people">
         <p className="name_people">People</p>
-        <p className="title_people">Frequent collaborators</p>
+        <button className="gr_button_frequet_collaboration">
+          <p className="title_people">Frequent collaborators</p>
         <img src={ic_arr_down_gray} />
+        </button>
+        
       </div>
       <div className="main_list_container_card_people">
         <div className="item_in_list_card_people">

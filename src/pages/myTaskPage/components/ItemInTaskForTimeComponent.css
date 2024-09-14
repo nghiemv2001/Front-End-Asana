@@ -1,0 +1,179 @@
+.conatiner_item_task_for_time_inbox{
+    height: 37px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: #CFCBCB solid 1px;
+}
+
+.conatiner_item_task_for_time img{
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.task_name_item_task_for_time{
+    position: relative;
+    width: 517px;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    border-right: #CFCBCB solid 1px;
+}
+
+
+.due_date_item_task_for_time{
+    position: relative;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    border-right: #CFCBCB solid 1px;
+}
+
+
+.projects_in_item_task_for_time{
+    position: relative;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    border-right: #CFCBCB solid 1px;
+}
+
+
+.task_visility_item_task_for_time{
+    position: relative;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    border-right: #CFCBCB solid 1px;
+}
+
+.Collaborator_item_task_for_time{
+    position: relative;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    border-right: #CFCBCB solid 1px;
+}
+
+
+.ic_plus_in_item_task_for_time{
+    width: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 4px;
+}
+
+
+.btn_check_broder_item_task_for_time img{
+    margin-right: 8px;
+}
+
+.container_gr_btn_item_in_task_for_time{
+    position: absolute;
+    width: 70px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 4px;
+    border-right: #CFCBCB solid 1px;
+}
+
+.btn_sort_item_task_for_time{
+    width: 12px;
+}
+
+.btn_arr_down_item_task_for_time img{
+    width: 12px;
+    height: 10px;
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.due_date_item_task_for_time button{
+    position: absolute;
+    right: 12px;
+}
+
+.due_date_item_task_for_time img {
+    filter: grayscale(100%) brightness(0.7);
+}
+
+
+.projects_in_item_task_for_time img{
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.btn_first_visility_item{
+    position: absolute;
+    right: 12px;
+}
+
+.task_visility_item_task_for_time img{
+    margin-right: 8px;
+    filter: grayscale(100%) brightness(0.7);
+}
+
+ 
+.Collaborator_item_task_for_time button{
+    position: absolute;
+    right: 12px;
+}
+
+.Collaborator_item_task_for_time img{
+    filter: grayscale(100%) brightness(0.7);
+}
+
+
+.projects_in_item_task_for_time button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 187px;
+    height: 20px;
+    border-radius: 12px;
+    font-size: 12px;
+    background-color: #E8E5E4;
+}
+
+.projects_in_item_task_for_time div{
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background-color: #9EE7E3;
+}
+
+
+@media (max-width: 1450px){
+    .ic_plus_in_item_task_for_time, .ic_plus_in_spreadsheet_header_inbox{
+        display: none;
+    }
+}
+
+@media (max-width: 1350px){
+    .Collaborator_item_task_for_time, .Collaborator_spreadsheet_header_inbox{
+        display: none;
+    }
+}
+
+@media (max-width: 1150px){
+    .task_visility_item_task_for_time, .task_visility_spreadsheet_header_inbox{
+        display: none;
+    }
+}
+
+@media (max-width: 950px){
+    .projects_in_item_task_for_time, .projects_in_spreadsheet_header_inbox{
+        display: none;
+    }
+}
+
+@media (max-width: 650px){
+    .due_date_item_task_for_time, .due_date_spreadsheet_header_inbox{
+        display: none;
+    }
+}

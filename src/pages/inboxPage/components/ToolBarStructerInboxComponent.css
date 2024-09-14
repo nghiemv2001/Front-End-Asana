@@ -1,0 +1,75 @@
+
+.container_icon_left_tool_bar_structer_inbox_component{
+    display: flex;
+    align-items: start;
+    padding: 12px 12px ;
+}
+.container_icon_left_tool_bar_structer_inbox_component button {
+    display: flex;
+    align-items: center;
+}
+
+.conatiner_left_tool_bar_structer_inbox_component{
+    height: 52px;
+    width: 50%;
+    border: solid 1px rgb(196, 196, 196);
+    display: flex;
+    flex: 1;
+    align-items: center;
+    position: relative;
+}
+
+
+.conatiner_right_tool_bar_structer_inbox_component{
+    height: 52px;
+    width: 50%;
+    border: solid 1px rgb(196, 196, 196);
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.conatiner_tool_bar_structer_inbox_component{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.container_icon_right_tool_bar_structer_inbox_component{
+    display: flex;
+}
+.container_icon_right_tool_bar_structer_inbox_component{
+    display: flex;
+    position: absolute;
+    right: 12px
+}
+
+.ic_notifications_in_gr_ic_left{
+    margin-right: 12px;
+}
+
+.ic_fillter_in_gr_ic_left{
+    margin: 0 12px;
+}
+
+.btn_check_mark_complete_in_inbox{
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    width: 129px;
+    justify-content: space-between;
+    border: solid #bebcc0 1px;
+    padding: 0 4px;
+    margin-left: 24px;  
+}
+
+.container_list_gr_ic_inbox{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 12px;
+}
+
+.container_list_gr_ic_inbox button{
+    margin-left: 20px;
+}

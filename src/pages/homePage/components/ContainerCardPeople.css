@@ -1,11 +1,24 @@
 .container_card_people{
     flex: 1;
+    flex-grow: 1;
     padding: 8px;
     border-radius: 16px;
-    margin-left: 8px;
+    margin: 0 8px;
     background-color: white;
 }
 
+.container_card_people:hover{
+    padding: 4px;
+}
+
+.gr_button_frequet_collaboration{
+    display: flex;
+    align-items: center;
+}
+
+.gr_button_frequet_collaboration:hover{
+    background-color: #b3afaf;
+}
 .head_container_card_people{
     margin: 12px 0 0 12px;
     display: flex;
