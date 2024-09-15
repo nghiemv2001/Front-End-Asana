@@ -1,0 +1,231 @@
+.contentlisttaskanddetailtask {
+    display: flex;
+    width: 100%;
+}
+
+.list_task_inbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 1px 0 0 0 solid rgb(188, 187, 187);
+}
+
+.details_task_inbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 0 0 0 0 solid rgb(188, 187, 187);
+}
+
+.gr_btn_container_person_assignee_inbox {
+    display: flex;
+}
+
+.container_gird_detail_task_inbox p {
+    padding: 20px 0;
+}
+
+.gr_btn_container_person_assignee_inbox button {
+    padding: 12px 20px;
+    display: flex;
+}
+
+.person_calendar_inbox {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+.person_calendar_inbox img {
+    margin-right: 8px;
+}
+
+.gr_btn_container_calendar_inbox {
+    display: flex;
+}
+
+.gr_btn_container_dependencies_inbox {
+    display: flex;
+    align-items: center;
+}
+
+.gr_btn_container_person_assignee_inbox img {
+    margin-left: 8px;
+}
+
+.person_assignee_inbox {
+    display: flex;
+    align-items: center;
+}
+
+.container_projects_inbox {
+    display: flex;
+    align-items: center;
+}
+
+.container_dependencies_inbox {
+    display: flex;
+    align-items: center;
+}
+
+.div_infromation_fileds_inbox {
+    display: flex;
+}
+
+.table_layout {
+    margin-bottom: 32px;
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng container */
+    border-collapse: collapse;
+    /* Đảm bảo không có khoảng trống giữa các ô */
+}
+
+.table_layout td {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    /* Viền cho các ô */
+    padding: 4px;
+    /* Tạo khoảng cách giữa nội dung và viền */
+    text-align: left;
+    /* Căn trái nội dung trong ô */
+}
+
+.table_layout img {
+    margin-right: 4px;
+    /* Khoảng cách giữa hình ảnh và văn bản */
+}
+
+.td_first_filed {
+    display: flex;
+}
+
+#text_fileds_grid {
+    display: flex;
+    padding: 0;
+}
+
+.ql-editor{
+    border-radius: 8px;
+}
+
+.btn_add_subtask_inbox{
+    display: flex;
+    margin-top: 12px;
+    align-items: center;
+    width: fit-content;
+    justify-content: space-evenly;
+    border-radius: 8px;
+    border: 1px solid rgb(177, 176, 176);
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn_add_subtask_inbox img{
+    margin-right: 4px;
+}
+
+.container_gird_fileds {
+    display: grid;
+    grid-template-columns: 172px 172px;
+    padding: 12px 12px;
+}
+
+.gr_btn_container_projects_inbox {
+    padding: 12px 20px;
+}
+
+.recently_assigned_inbox {
+    display: flex;
+    align-items: center;
+}
+
+.recently_assigned_inbox img {
+    filter: grayscale(100%) brightness(2);
+}
+
+.time_past_for_task {
+    width: 100%;
+    border: 1px solid gray;
+    height: 36px;
+    display: flex;
+    padding-left: 24px;
+    align-items: center;
+}
+
+.wrap_list_task_inbox {
+    height: 620px;
+    overflow-y: scroll;
+}
+
+
+.wrap_list_task_inbox::-webkit-scrollbar {
+    width: 5px;
+}
+
+.wrap_list_task_inbox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.wrap_list_task_inbox::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.wrap_detail_task_inbox {
+    height: 450px;
+    overflow-y: scroll;
+}
+
+
+.wrap_detail_task_inbox::-webkit-scrollbar {
+    width: 5px;
+}
+
+.wrap_detail_task_inbox::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.wrap_detail_task_inbox::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+/*  */
+
+.container_gird_detail_task_inbox {
+    display: grid;
+    grid-template-columns: 144px auto;
+}
+
+.bottom_details_task_inbox{
+    height: 170px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgb(216, 216, 216);
+    background-color: #F1F2FC;
+}
+
+.container_div_img_and_input{
+    padding: 10px 20px;
+    display: flex;
+    align-items: start;
+}
+
+.container_input_rich_text{
+    margin-left: 30px;
+    height: 150px;
+    width: 100%;
+    border: #fbfbfb solid 1px;
+    border-radius: 8px;
+}
+
+.container_input_rich_text input{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    outline: none;
+}

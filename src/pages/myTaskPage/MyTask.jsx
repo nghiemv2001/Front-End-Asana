@@ -3,7 +3,8 @@ import DrawerComponent from "../../components/drawer/drawer";
 import Header from "../../components/header/Header";
 
 
-import './MyTaskPage.css'
+import styles from './MyTaskPage.module.css'
+
 import MyTaskMainContent from "./components/MyTaskMainContent";
 import { DrawerContext } from "../../context/useContext";
 
@@ -17,9 +18,9 @@ const MyTaskPage = () => {
 
   return (
     <>
-      <div className="container_mytask_page">
+      <div className={styles.container_mytask_page}>
         <Header toggleDrawer={toggleDrawer} />
-        <div className="wrap_drawer_mytask_main_content">
+        <div className={styles.wrap_drawer_mytask_main_content}>
           <DrawerComponent isOpenDrawer={isOpenDrawer}/>
           <MyTaskMainContent/>
         </div>

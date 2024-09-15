@@ -1,4 +1,4 @@
-import "./myTaskMainContent.css";
+import  styles from "./myTaskMainContent.module.css";
 import HeaderMyTaskComponent from "./HeaderMyTaskComponent";
 import OptionFunctionMyTask from "./OptionFunctionMyTask";
 import SpreadsheetHeaderInBox from "./SpreadsheetHeaderInBox";
@@ -6,7 +6,7 @@ import TaskForTimeComponent from "./TaskForTimeComponent";
 
 const MyTaskMainContent = () => {
   return (
-    <div className="mytask_main_content">
+    <div className={styles.mytask_main_content}>
       <HeaderMyTaskComponent />
       <OptionFunctionMyTask />
       <SpreadsheetHeaderInBox />

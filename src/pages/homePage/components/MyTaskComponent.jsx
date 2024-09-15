@@ -1,11 +1,16 @@
-import "./MyTaskComponent.css";
+import style from "./MyTaskComponent.module.css";
 import ic_boy from "../../../assets/icons/ic_main_avatar_1.svg";
 import ic_protect from "../../../assets/icons/ic_protected.svg";
-
 import ic_plus_gray from "../../../assets/icons/ic_plus_gray.svg";
 import ListItemInMyTask from "./ListItemInMyTask";
 import ic_option from "../../../assets/icons/ic_menu_options.svg";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
+import ic_plus from "../../../assets/icons/ic_plus.svg";
+import ic_eye from "../../../assets/icons/ic_eye.svg";
+import ic_remove from "../../../assets/icons/ic_trash.svg";
+import ic_check from "../../../assets/icons/ic_check.svg";
+import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
 
 const tasks = [
   {
@@ -32,61 +37,93 @@ const tasks = [
 ];
 
 const MyTasKComponent = () => {
+  const buttonRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Upcoming");
+  const handleOpenSelection = () => {
+    setIsOpen(!isOpen);
+  };
 
+  useOutsideClick(buttonRef, () => setIsOpen(false));
+
+  const listOptional = [
+    {
+      src: ic_plus,
+      title: "create task",
+    },
+    {
+      src: ic_eye,
+      title: "View all my task",
+    },
+    {
+      src: ic_check,
+      title: "Halt size",
+    },
+    {
+      src: "",
+      title: "Full size",
+    },
+    {
+      src: ic_remove,
+      title: "remove widget",
+    },
+  ];
   return (
-    <div className="container_my_task_home">
-      <button className="ic_option_my_task_component">
-        <img src={ic_option} />
+    <div className={style.container_my_task_home}>
+      <button
+        className={style.ic_option_my_task_component}
+        ref={buttonRef}
+        onClick={handleOpenSelection}
+      >
+        {isOpen ? <CustomSelectMenu listOptional={listOptional} /> : null}
+        <img src={ic_option} alt="Options" />
       </button>
-      <div className="cotainer_header_my_task">
-        <button className="avatar_profile_my_task">
-          <img className="ic_avatar_main_1" src={ic_boy} />
-          <span className="tooltip_text_view_profile">View profile</span>
+      <div className={style.cotainer_header_my_task}>
+        <button className={style.avatar_profile_my_task}>
+          <img className={style.ic_avatar_main_1} src={ic_boy} alt="Avatar" />
+          <span className={style.tooltip_text_view_profile}>View profile</span>
         </button>
-        <div className="big_content_main_my_task">
-          <div className="component_text_my_task_icon">
+        <div className={style.big_content_main_my_task}>
+          <div className={style.component_text_my_task_icon}>
             <p>My Task</p>
-            <button className="btn_protect_in_my_task">
-              <img src={ic_protect} />
-              <span className="tooltip_text_protect_my_task">
-                Task you add here pravite to you unless you add collaborators or
+            <button className={style.btn_protect_in_my_task}>
+              <img src={ic_protect}  />
+              <span className={style.tooltip_text_protect_my_task}>
+                Task you add here are private to you unless you add collaborators or
                 add the tasks to a shared project.
               </span>
             </button>
           </div>
-          <div className="tabs">
+          <div className={style.tabs}>
             <button
               onClick={() => setActiveTab("Upcoming")}
-              className={activeTab === "Upcoming" ? "active" : ""}
+              className={activeTab === "Upcoming" ? style.active : ""}
             >
               Upcoming
             </button>
             <button
               onClick={() => setActiveTab("Overdue")}
-              className={activeTab === "Overdue" ? "active" : ""}
+              className={activeTab === "Overdue" ? style.active : ""}
             >
               Overdue (1)
             </button>
             <button
               onClick={() => setActiveTab("Completed")}
-              className={activeTab === "Completed" ? "active" : ""}
+              className={activeTab === "Completed" ? style.active : ""}
             >
               Completed
             </button>
           </div>
         </div>
-        <button>
-          <img />
-        </button>
+
       </div>
-      <div className="container_create_task_in_my_task">
-        <div className="container_gr_create_task_in_my_task">
-          <img src={ic_plus_gray} />
+      <div className={style.container_create_task_in_my_task}>
+        <div className={style.container_gr_create_task_in_my_task}>
+          <img src={ic_plus_gray} alt="Plus Icon" />
           <p>Create task</p>
         </div>
       </div>
-      <div className="my_list_task_component">
+      <div className={style.my_list_task_component}>
         {tasks.map((task, index) =>
           task.status === activeTab ? (
             <ListItemInMyTask
