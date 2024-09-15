@@ -36,7 +36,7 @@ const tasks = [
   },
 ];
 
-const MyTasKComponent = () => {
+const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
   const buttonRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Upcoming");
@@ -46,30 +46,50 @@ const MyTasKComponent = () => {
 
   useOutsideClick(buttonRef, () => setIsOpen(false));
 
+  const uploadFullSizeWidget = () => {
+
+    console.log('Upload Full Size Widget');
+  };
+  
+  const uploadFullSizeWidget1 = () => {
+    // Your code here
+    console.log('Upload Full Size Widget 1');
+  };
+  
+  const removeWidget = () => {
+    // Your code here
+    console.log('Remove Widget');
+  };
+
   const listOptional = [
     {
       src: ic_plus,
       title: "create task",
+      action: uploadFullSizeWidget, // Function reference
     },
     {
       src: ic_eye,
       title: "View all my task",
+      action: uploadFullSizeWidget1, // Function reference
     },
     {
-      src: ic_check,
-      title: "Halt size",
+      src: size === 'half' ? ic_check : '',
+      title: "Half size",
+      action: toggleHalfSize, // Function reference
     },
     {
-      src: "",
+      src: size === 'full' ? ic_check : '',
       title: "Full size",
+      action: toggleFullSize, // Function reference
     },
     {
       src: ic_remove,
       title: "remove widget",
+      action: removeWidget, // Function reference
     },
   ];
   return (
-    <div className={style.container_my_task_home}>
+    <div className={`${style.container_my_task_home} ${style.card} ${size === 'full' ? style.fullSize : style.halfSize}`}>
       <button
         className={style.ic_option_my_task_component}
         ref={buttonRef}

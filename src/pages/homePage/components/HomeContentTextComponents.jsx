@@ -1,25 +1,43 @@
 import style from "./HomeContentTextComponent.module.css";
 
 import ic_arrow from "../../../assets/icons/ic_arrow_down_black.svg";
-import ic_check from '../../../assets/icons/ic_check.svg';
-import ic_collaborator from '../../../assets/icons/ic_collaborator.svg';
+import ic_check from "../../../assets/icons/ic_check.svg";
+import ic_collaborator from "../../../assets/icons/ic_collaborator.svg";
 import StackDirectionRow from "./StackDirectionRow";
-import ContainerCardProject from "./ContainerCardProject";
-import ContainerCardPeople from "./ContainerCardPeople";
-import Sortable from 'sortablejs';
-import { useEffect, useRef } from "react";
+import {ContainerCardProject} from './ContainerCardProject';
+import {ContainerCardPeople} from './ContainerCardPeople';
+import Sortable from "sortablejs";
+import { useEffect, useRef, useState } from "react";
 import MyTasKComponent from "./MyTaskComponent";
 
 const HomeContentTextComponent = () => {
+  const [sizes, setSizes] = useState({
+    myTask: "half",
+    project: "half",
+    people: "half",
+  });
 
+  const toggleHalfSize = (component) => {
+    setSizes((prevSizes) => ({
+      ...prevSizes,
+      [component]: "half", 
+    }));
+  };
+  
+  const toggleFullSize = (component) => {
+    setSizes((prevSizes) => ({
+      ...prevSizes,
+      [component]: "full", 
+    }));
+  };
   const listRef = useRef(null);
 
   useEffect(() => {
-      Sortable.create(listRef.current, {
-          swapThreshold: 0.99,
-          invertSwap: true,
-          animation: 150,
-      });
+    Sortable.create(listRef.current, {
+      swapThreshold: 0.99,
+      invertSwap: true,
+      animation: 150,
+    });
   }, []);
 
   return (
@@ -44,14 +62,25 @@ const HomeContentTextComponent = () => {
         </div>
         <StackDirectionRow />
         <div className={style.container_card_project_and_people} ref={listRef}>
-          <MyTasKComponent />
-          <ContainerCardProject />
-          <ContainerCardPeople />
+          <MyTasKComponent
+            size={sizes.myTask}
+            toggleFullSize={() => toggleFullSize("myTask")}
+            toggleHalfSize={() => toggleHalfSize("myTask")}
+          />
+          <ContainerCardProject
+            size={sizes.project}
+            toggleFullSize={() => toggleFullSize("project")}
+            toggleHalfSize={() => toggleHalfSize("project")}
+          />
+          <ContainerCardPeople
+            size={sizes.people}
+            toggleFullSize={() => toggleFullSize("people")}
+            toggleHalfSize={() => toggleHalfSize("people")}
+          />
         </div>
       </div>
     </div>
   );
-  
 };
 
 export default HomeContentTextComponent;

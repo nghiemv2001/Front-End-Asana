@@ -1,3 +1,8 @@
+import { useRef, useState } from "react";
+import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
+import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
+
+//Import ICON&IMAGE
 import style from "./ContainerCardProject.module.css";
 import ic_arr_down_gray from "../../../assets/icons/ic_arr_dwon_gray.svg";
 import ic_project from "../../../assets/icons/ic_project_drawer_blue.svg";
@@ -7,30 +12,29 @@ import ic_plus from "../../../assets/icons/ic_plus.svg";
 import ic_eye from "../../../assets/icons/ic_eye.svg";
 import ic_remove from "../../../assets/icons/ic_trash.svg";
 import ic_check from "../../../assets/icons/ic_check.svg";
-import ic_menu from '../../../assets/icons/ic_menu_options.svg'
-import { useRef, useState } from "react";
-import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
-import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
-const ContainerCardProject = () => {
+import ic_menu from "../../../assets/icons/ic_menu_options.svg";
+
+export const ContainerCardProject = ({ size, toggleFullSize, toggleHalfSize }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const buttonRef = useRef(null);
   const buttonmenuRef = useRef(null);
-
-  const handleOpenSelection = () => {
-    setIsOpen(!isOpen);
-  };
-  const handleOpenSelectionMenu = () => {
-    setIsOpenMenu(!isOpenMenu);
-  }
 
   useOutsideClick(buttonRef, () => {
     setIsOpen(false);
   });
 
   useOutsideClick(buttonmenuRef, () => {
-    setIsOpenMenu(false)
-  })
+    setIsOpenMenu(false);
+  });
+
+  const handleOpenSelection = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleOpenSelectionMenu = () => {
+    setIsOpenMenu(!isOpenMenu);
+  };
 
   const listMenuRecent = [
     {
@@ -41,7 +45,7 @@ const ContainerCardProject = () => {
       src: ic_plus,
       title: "Starred",
     },
-  ]
+  ];
 
   const listOptional = [
     {
@@ -53,12 +57,14 @@ const ContainerCardProject = () => {
       title: "View all my task",
     },
     {
-      src: ic_check,
-      title: "Halt size",
+      src: size === "half" ? ic_check : "",
+      title: "Half size",
+      action: toggleHalfSize,
     },
     {
-      src: "",
+      src: size === "full" ? ic_check : "",
       title: "Full size",
+      action: toggleFullSize,
     },
     {
       src: ic_remove,
@@ -66,7 +72,10 @@ const ContainerCardProject = () => {
     },
   ];
   return (
-    <div className={style.container_card_project}>
+    <div
+      className={`${style.container_card_project} ${style.card} 
+      ${size === "full" ? style.fullSize : style.halfSize}`}
+    >
       <div className={style.head_container_card_project}>
         <p className={style.name_project}>Project</p>
         <button
@@ -113,4 +122,3 @@ const ContainerCardProject = () => {
   );
 };
 
-export default ContainerCardProject;

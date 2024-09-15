@@ -6,6 +6,14 @@
     position: relative;
 }
 
+.halfSize {
+    grid-column: span 1;
+  }
+  
+  .fullSize {
+    grid-column: span 2;
+  }
+
 .container_my_task_home:hover {
     padding: 4px;
 }
