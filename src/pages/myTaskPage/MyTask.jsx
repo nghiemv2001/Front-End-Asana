@@ -4,7 +4,7 @@ import Header from "../../components/header/Header";
 
 
 import './MyTaskPage.css'
-import MyTaskMainContent from "./components/myTaskMainContent";
+import MyTaskMainContent from "./components/MyTaskMainContent";
 import { DrawerContext } from "../../context/useContext";
 
 const MyTaskPage = () => {
