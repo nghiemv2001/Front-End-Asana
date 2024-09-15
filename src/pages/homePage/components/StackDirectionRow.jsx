@@ -1,6 +1,6 @@
 import ItemStack from "./ItemTaskComponent";
 import ic_close from '../../../assets/icons/ic_close.svg'
-import "./StackDirectionRow.css";
+import style from "./StackDirectionRow.module.css";
 
 import img_get_start_detail_image from "../../../assets/images/get_start_detail_image 1.png";
 import ic_arrow_rigt from "../../../assets/icons/ic_arr_right_gray.svg";
@@ -18,37 +18,36 @@ const StackDirectionRow = () => {
   ];
 
   return (
-
-
-    <div className="getting_started">
+    <div className={style.getting_started}>
       <button>
-        <img className="ic_close_stack_direction_row" src={ic_close} />
+        <img className={style.ic_close_stack_direction_row} src={ic_close} alt="Close" />
       </button>
-      <div className="getting_started_container_left">
-      {steps.map((step, index) => (
-        <ItemStack
-          key={index}
-          done={step.done}
-          number={step.number}
-          text={step.text}
-          active={activeStep === step.number} // Pass active state
-          onClick={() => setActiveStep(step.number)} // Set active step on click
-        />
-      ))}
+      <div className={style.getting_started_container_left}>
+        {steps.map((step, index) => (
+          <ItemStack
+            key={index}
+            done={step.done}
+            number={step.number}
+            text={step.text}
+            active={activeStep === step.number} // Pass active state
+            onClick={() => setActiveStep(step.number)} // Set active step on click
+          />
+        ))}
       </div>
-      <div className="getting_started_container_right">
+      <div className={style.getting_started_container_right}>
         <img
-          className="img_get_start_detail_image"
+          className={style.img_get_start_detail_image}
           src={img_get_start_detail_image}
+          alt="Detail"
         />
-        <div className="content_in_getting_started_container_right">
+        <div className={style.content_in_getting_started_container_right}>
           <p>Keep work on track. Make it clear who’s doing what by when.</p>
-          <button className="btn_go_to_cross">
+          <button className={style.btn_go_to_cross}>
             Go to Cross-functional project plan
           </button>
-          <button className="btn_gr_next_step">
+          <button className={style.btn_gr_next_step}>
             Next step
-            <img src={ic_arrow_rigt} />
+            <img src={ic_arrow_rigt} alt="Arrow" />
           </button>
         </div>
       </div>

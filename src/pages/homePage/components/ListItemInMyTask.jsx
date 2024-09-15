@@ -1,19 +1,19 @@
-import "./ListItemInMyTask.css";
+import style from "./ListItemInMyTask.module.css";
 
 import ic_check_has_broder from "../../../assets/icons/ic_check_has_border_gray.svg";
 
 const ListItemInMyTask = ({ nameproject, timeproject }) => {
   return (
-    <button className="main_list_item_in_task">
-      <button className="main_list_item_in_task_left">
-        <img src={ic_check_has_broder} />
-        <p>{nameproject}</p>
-      </button>
-      <div className="main_list_item_in_task_right">
-        <button>Cross-fu...</button>
-        <p>{timeproject}</p>
-      </div>
+    <div className={style.main_list_item_in_task}>
+    <button className={style.main_list_item_in_task_left}>
+      <img src={ic_check_has_broder} alt="Check Icon" />
+      <p>{nameproject}</p>
     </button>
+    <div className={style.main_list_item_in_task_right}>
+      <button>Cross-fu...</button>
+      <p>{timeproject}</p>
+    </div>
+  </div>
   );
 };
 

@@ -1,16 +1,35 @@
 .container_card_project{
-    flex: 1;
-    flex-grow: 1;
-    margin: 0 8px;
-    padding: 8px;
+    grid-column: span 1;
+    height: 400px;
     border-radius: 16px;
     background-color: white;
+}
+
+.container_card_project:hover{
+    padding: 4px;
 }
 
 .head_container_card_project{
     margin: 12px 0 0 12px;
     display: flex;
     align-items: center;
+    position: relative;
+}
+.gr_btn_recents_card_project{
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-left: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.gr_btn_recents_card_project:hover{
+    background-color: aliceblue;
+}
+
+.gr_btn_recents_card_project img{
+    margin-left: 8px;
 }
 
 .name_project{
@@ -23,12 +42,29 @@
     font-size: 12px;
     font-weight: 700;
     color: #b3afaf;
-    margin-left: 16px;
 }
 
 .head_container_card_project img{
-    margin-left: 16px;
     width: 10px;
+}
+
+.btn_option_menu_card_project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 24px;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.btn_option_menu_card_project:hover{
+    background-color: aliceblue;
+}
+
+.btn_option_menu_card_project img{
+    height: 16px;
+    width: 16px;
 }
 
 .main_list_container_card_project{

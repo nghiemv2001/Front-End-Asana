@@ -1,5 +1,5 @@
 
-.cotainer_header_inbox_page{
+.container_header_inbox_page{
     width: 100%;
     position: static    ;
     padding: 12px  4px 20px;
@@ -12,6 +12,7 @@
 
 .big_content_main_header_inbox_page {
     display: flex;
+    flex-direction: column;
     position: relative;
 }
 

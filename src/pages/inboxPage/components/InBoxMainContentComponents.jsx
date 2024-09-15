@@ -1,12 +1,11 @@
 import { ContentListTaskAndDetailTaskComponent } from "./ContentListTaskAndDetailTaskComponent";
-import { HeaderInboxComponentt } from "./HeaderInboxComponentt";
-import "./InBoxMainContentComponents.css";
+import { HeaderInboxComponent } from "./HeaderInboxComponent";
+import styles from "./InBoxMainContentComponents.module.css";
 import { ToolBarStructerInboxComponent } from "./ToolBarStructerInboxComponent";
-
 export const InBoxMainContentComponents = () => {
   return (
-    <div className="inbox_main_content">
-      <HeaderInboxComponentt />
+    <div className={styles.inbox_main_content}>
+      <HeaderInboxComponent/>
       <ToolBarStructerInboxComponent/>
       <ContentListTaskAndDetailTaskComponent/>
     </div>
