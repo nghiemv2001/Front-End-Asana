@@ -1,5 +1,4 @@
 import style from "./ItemTaskComponent.module.css";
-
 import ic_check from "../../../assets/icons/ic_check.svg";
 
 const ItemStack = ({ done, number, text, active, onclick }) => {

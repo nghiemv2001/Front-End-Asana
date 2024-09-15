@@ -1,16 +1,19 @@
-import style from "./MyTaskComponent.module.css";
+
+import ListItemInMyTask from "./ListItemInMyTask";
+import { useRef, useState } from "react";
+import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
+import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
+
 import ic_boy from "../../../assets/icons/ic_main_avatar_1.svg";
 import ic_protect from "../../../assets/icons/ic_protected.svg";
 import ic_plus_gray from "../../../assets/icons/ic_plus_gray.svg";
-import ListItemInMyTask from "./ListItemInMyTask";
-import ic_option from "../../../assets/icons/ic_menu_options.svg";
-import { useRef, useState } from "react";
-import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
 import ic_plus from "../../../assets/icons/ic_plus.svg";
 import ic_eye from "../../../assets/icons/ic_eye.svg";
 import ic_remove from "../../../assets/icons/ic_trash.svg";
 import ic_check from "../../../assets/icons/ic_check.svg";
-import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
+import ic_option from "../../../assets/icons/ic_menu_options.svg";
+
+import style from "./MyTaskComponent.module.css";
 
 const tasks = [
   {
@@ -47,17 +50,14 @@ const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
   useOutsideClick(buttonRef, () => setIsOpen(false));
 
   const uploadFullSizeWidget = () => {
-
     console.log('Upload Full Size Widget');
   };
-  
+
   const uploadFullSizeWidget1 = () => {
-    // Your code here
     console.log('Upload Full Size Widget 1');
   };
   
   const removeWidget = () => {
-    // Your code here
     console.log('Remove Widget');
   };
 
@@ -65,27 +65,27 @@ const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
     {
       src: ic_plus,
       title: "create task",
-      action: uploadFullSizeWidget, // Function reference
+      action: uploadFullSizeWidget, 
     },
     {
       src: ic_eye,
       title: "View all my task",
-      action: uploadFullSizeWidget1, // Function reference
+      action: uploadFullSizeWidget1, 
     },
     {
       src: size === 'half' ? ic_check : '',
       title: "Half size",
-      action: toggleHalfSize, // Function reference
+      action: toggleHalfSize, 
     },
     {
       src: size === 'full' ? ic_check : '',
       title: "Full size",
-      action: toggleFullSize, // Function reference
+      action: toggleFullSize, 
     },
     {
       src: ic_remove,
       title: "remove widget",
-      action: removeWidget, // Function reference
+      action: removeWidget, 
     },
   ];
   return (

@@ -1,6 +1,6 @@
-import style from "./ListItemInMyTask.module.css";
-
 import ic_check_has_broder from "../../../assets/icons/ic_check_has_border_gray.svg";
+
+import style from "./ListItemInMyTask.module.css";
 
 const ListItemInMyTask = ({ nameproject, timeproject }) => {
   return (
