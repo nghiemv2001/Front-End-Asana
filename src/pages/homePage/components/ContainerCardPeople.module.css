@@ -1,9 +1,6 @@
 .container_card_people{
-    flex: 1;
-    flex-grow: 1;
-    padding: 8px;
+    height: 400px;
     border-radius: 16px;
-    margin: 0 8px;
     background-color: white;
 }
 
@@ -14,14 +11,19 @@
 .gr_button_frequet_collaboration{
     display: flex;
     align-items: center;
+position: relative;
+    padding: 4px 8px;
+    margin-left: 8px;
 }
 
 .gr_button_frequet_collaboration:hover{
-    background-color: #b3afaf;
+    background-color: aliceblue;
+    border-radius: 8px;
 }
 .head_container_card_people{
     margin: 12px 0 0 12px;
     display: flex;
+    position: relative;
     align-items: center;
 }
 
@@ -35,7 +37,6 @@
     font-size: 12px;
     font-weight: 700;
     color: #b3afaf;
-    margin-left: 16px;
 }
 
 .head_container_card_people img{

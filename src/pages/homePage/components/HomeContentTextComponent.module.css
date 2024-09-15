@@ -75,9 +75,10 @@
 /* ========= CSS  container_card_project_and_people*/
 
 .container_card_project_and_people{
-    display: flex;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
     margin-top: 16px;
     width: 100%;
-    height: 400px;
 }
 

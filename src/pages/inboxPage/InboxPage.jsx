@@ -3,7 +3,8 @@ import DrawerComponent from "../../components/drawer/drawer";
 import Header from "../../components/header/Header";
 import { DrawerContext } from "../../context/useContext";
 import { InBoxMainContentComponents } from "./components/InBoxMainContentComponents";
-import './InBoxPage.css'
+import styles from './InBoxPage.module.css'
+
 export const InboxPage = () => {
   const { isOpenDrawer, setIsOpenDrawer } = useContext(DrawerContext);
 
@@ -13,9 +14,9 @@ export const InboxPage = () => {
 
   return (
     <>
-      <div className="container_mytask_page">
+      <div className={styles.container_mytask_page}>
         <Header toggleDrawer={toggleDrawer} />
-        <div className="wrap_drawer_inbox_main_content">
+        <div className={styles.wrap_drawer_inbox_main_content}>
           <DrawerComponent isOpenDrawer={isOpenDrawer} />
           <InBoxMainContentComponents />
   
