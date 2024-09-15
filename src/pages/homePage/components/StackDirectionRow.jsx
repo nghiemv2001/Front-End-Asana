@@ -6,7 +6,6 @@ import img_get_start_detail_image from "../../../assets/images/get_start_detail_
 import ic_arrow_rigt from "../../../assets/icons/ic_arr_right_gray.svg";
 
 import style from "./StackDirectionRow.module.css";
-
 const StackDirectionRow = () => {
 
   const [activeStep, setActiveStep] = useState(2);

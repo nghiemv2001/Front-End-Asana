@@ -1,7 +1,9 @@
 .container_card_people {
-    height: 400px;
+    width: 100%;
+    position: relative;
+    min-height: 400px;
     border-radius: 16px;
-    background-color: white;
+    background-color: white
 }
 
 .halfSize {
@@ -58,13 +60,13 @@
 
 
 .main_list_container_card_people {
-    flex-grow: 1;
-    display: grid;
-    gap: 32px;
-    grid-template-columns: auto auto;
-    width: 90%;
-    justify-content: center;
-    margin-top: 20px;
+    width: 100%;
+    gap: 12px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .item_in_list_card_people button {
@@ -90,6 +92,8 @@
 
 .gr_button_in_card_people {
     width: 100%;
+    position: absolute;
+    bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,4 +126,40 @@
 
 .btn_option_menu_card_people:hover {
     background-color: aliceblue;
+}
+
+@media (max-width: 1150px){
+    .getting_started_container_right{
+       flex-direction: column;
+    }
+
+    .content_in_getting_started_container_right{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content_in_getting_started_container_right p{
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 870px){
+
+    .container_card_people{
+        margin: 0;
+        margin-top: 12px;
+    }
+
+    .container_card_project{
+        margin: 0;
+    
+    }
+}
+
+@media (max-width: 668px){
+    .getting_started_container_right{
+       display: none;
+    }
+
 }

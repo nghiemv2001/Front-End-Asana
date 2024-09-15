@@ -117,6 +117,139 @@ export const ContainerCardProject = ({ size, toggleFullSize, toggleHalfSize }) =
             <p>Create project</p>
           </button>
         </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={plus_has_broder_gray} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={plus_has_broder_gray} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={plus_has_broder_gray} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={plus_has_broder_gray} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
+
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={plus_has_broder_gray} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={plus_has_broder_gray} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project2} />
+            <p>Create project</p>
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -128,3 +128,12 @@
 .btn_drawer_click_help_with p{
     color: white;
 }
+
+
+
+@media (max-width: 870px){
+    .drawer_component{
+        display: none;
+    }
+}
+
