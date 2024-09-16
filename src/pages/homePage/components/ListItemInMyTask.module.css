@@ -17,12 +17,20 @@
 
 .main_list_item_in_task_left{
     display: flex;
+    border: 1px solid gray;
+    padding: 6px 2px;
+    margin-right: 8px;
+    border-radius: 30px;
     align-items: center;
     position: relative;
 }
 
+.main_list_item_in_task_left:hover{
+    background-color:rgb(158, 202, 158);
+}
+
 .main_list_item_in_task_left img{
-   margin: 0 12px;
+   margin: 0 4px;
 }
 
 .main_list_item_in_task_right{

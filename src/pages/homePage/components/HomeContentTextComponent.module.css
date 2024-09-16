@@ -1,7 +1,7 @@
 .home_page_context{
     height: calc(100vh - 48px);
     flex-grow: 1;
-    /* width: calc(100vw - 240px); */
+    width: calc(100vw - 240px);
     overflow-y: scroll;
     background-image: url("https://d3ki9tyy5l5ruj.cloudfront.net/obj/a0b52f278bf39ad6bbee745b64865a8cfd5bf4bf/Aqua_background.png");
 }

@@ -15,7 +15,7 @@
   }
 
 .container_my_task_home:hover {
-    padding: 4px;
+    padding: 2px;
 }
 
 .cotainer_header_my_task {
@@ -245,9 +245,6 @@
 
 
 @media (max-width: 870px){
-    .drawer_component{
-        display: none;
-    }
 
     .container_card_project_and_people{
         flex-direction: column;

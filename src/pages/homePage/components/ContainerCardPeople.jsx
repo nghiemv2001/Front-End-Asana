@@ -10,7 +10,6 @@ import img_people_3 from "../../../assets/images/main_avatar_3.png";
 import ic_check from "../../../assets/icons/ic_check.svg";
 import ic_menu_option from '../../../assets/icons/ic_menu_options.svg'
 import ic_plus from "../../../assets/icons/ic_plus.svg";
-import ic_eye from "../../../assets/icons/ic_eye.svg";
 import ic_remove from "../../../assets/icons/ic_trash.svg";
 
 import style from "./ContainerCardPeople.module.css";
@@ -54,11 +53,7 @@ export const ContainerCardPeople = ({size,  toggleHalfSize, toggleFullSize}) => 
   const listOptional = [
     {
       src: ic_plus,
-      title: "create task",
-    },
-    {
-      src: ic_eye,
-      title: "View all my task",
+      title: "Invite",
     },
     {
       src: size === "half" ? ic_check : "",

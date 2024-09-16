@@ -9,7 +9,6 @@ import ic_project from "../../../assets/icons/ic_project_drawer_blue.svg";
 import plus_has_broder_gray from "../../../assets/icons/plus_has_broder_gray.svg";
 import ic_project2 from "../../../assets/icons/ic_project_drawer_pink.svg";
 import ic_plus from "../../../assets/icons/ic_plus.svg";
-import ic_eye from "../../../assets/icons/ic_eye.svg";
 import ic_remove from "../../../assets/icons/ic_trash.svg";
 import ic_check from "../../../assets/icons/ic_check.svg";
 import ic_menu from "../../../assets/icons/ic_menu_options.svg";
@@ -50,11 +49,7 @@ export const ContainerCardProject = ({ size, toggleFullSize, toggleHalfSize }) =
   const listOptional = [
     {
       src: ic_plus,
-      title: "create task",
-    },
-    {
-      src: ic_eye,
-      title: "View all my task",
+      title: "New Project",
     },
     {
       src: size === "half" ? ic_check : "",
@@ -156,97 +151,6 @@ export const ContainerCardProject = ({ size, toggleFullSize, toggleHalfSize }) =
         <div className={style.item_in_list_card_project}>
           <button>
             <img src={plus_has_broder_gray} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project2} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={plus_has_broder_gray} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project2} />
-            <p>Create project</p>
-          </button>
-        </div>
-
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={plus_has_broder_gray} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project2} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={plus_has_broder_gray} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project2} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project2} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project} />
-            <p>Create project</p>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_project}>
-          <button>
-            <img src={ic_project2} />
             <p>Create project</p>
           </button>
         </div>
