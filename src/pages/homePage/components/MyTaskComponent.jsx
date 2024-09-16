@@ -1,75 +1,99 @@
-import style from "./MyTaskComponent.module.css";
+import ListItemInMyTask from "./ListItemInMyTask";
+import { useRef, useState, useEffect } from "react";
+import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
+import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
+import { useFetchTasks } from "../../../data/home/TaskAPI";
+
 import ic_boy from "../../../assets/icons/ic_main_avatar_1.svg";
 import ic_protect from "../../../assets/icons/ic_protected.svg";
 import ic_plus_gray from "../../../assets/icons/ic_plus_gray.svg";
-import ListItemInMyTask from "./ListItemInMyTask";
-import ic_option from "../../../assets/icons/ic_menu_options.svg";
-import { useRef, useState } from "react";
-import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
 import ic_plus from "../../../assets/icons/ic_plus.svg";
 import ic_eye from "../../../assets/icons/ic_eye.svg";
 import ic_remove from "../../../assets/icons/ic_trash.svg";
 import ic_check from "../../../assets/icons/ic_check.svg";
-import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
+import ic_option from "../../../assets/icons/ic_menu_options.svg";
 
-const tasks = [
-  {
-    id: 1,
-    title: "Project Web React",
-    date: "Today - Sep 10",
-    status: "Upcoming",
-    type: "Cross-functional",
-  },
-  {
-    id: 2,
-    title: "Project Mobile React",
-    date: "NextDay - Sep 8",
-    status: "Upcoming",
-    type: "Cross-functional",
-  },
-  {
-    id: 3,
-    title: "Project Figma React",
-    date: "Yesterday - Sep 6",
-    status: "Overdue",
-    type: "Cross-functional",
-  },
-];
+import style from "./MyTaskComponent.module.css";
 
-const MyTasKComponent = () => {
+const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
+
   const buttonRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Upcoming");
+  const { data, fetchTasks } = useFetchTasks();
+  const [tasks, setTasks] = useState([]);
+  
+  useOutsideClick(buttonRef, () => setIsOpen(false));
+  useEffect(() => {
+    if (data) {
+      setTasks(data);  
+    }
+  }, [data]);
+
   const handleOpenSelection = () => {
     setIsOpen(!isOpen);
   };
 
-  useOutsideClick(buttonRef, () => setIsOpen(false));
+  
+  const formatDate = (date) => {
+    const options = { month: "short", day: "numeric" };
+    return new Intl.DateTimeFormat("en-US", options).format(new Date(date));
+  };
+
+  const getStatus = (dueDate, status) => {
+    const today = new Date();
+    const taskDate = new Date(dueDate);
+    if (status === true) return "Completed";
+    if (taskDate < today) return "Overdue";
+    if (taskDate > today) return "Upcoming";
+  };
+
+  
+  const convertedTasks = (tasks && Array.isArray(tasks))
+    ? tasks.map((task, index) => {
+        const status = getStatus(task.due_date, task.status);
+        const formattedDate = formatDate(task.due_date);
+        return {
+          _id: task._id,
+          id: index + 1,
+          title: task.title,
+          date: `${status === "Today" ? "Today" : "NextDay"} - ${formattedDate}`,
+          status: status,
+          type: "Cross-functional",
+        };
+      })
+    : [];
 
   const listOptional = [
     {
       src: ic_plus,
-      title: "create task",
+      title: "Create task",
+      action: () => console.log("Upload Full Size Widget"),
     },
     {
       src: ic_eye,
       title: "View all my task",
+      action: () => console.log("Upload Full Size Widget 1"),
     },
     {
-      src: ic_check,
-      title: "Halt size",
+      src: size === "half" ? ic_check : "",
+      title: "Half size",
+      action: toggleHalfSize,
     },
     {
-      src: "",
+      src: size === "full" ? ic_check : "",
       title: "Full size",
+      action: toggleFullSize,
     },
     {
       src: ic_remove,
-      title: "remove widget",
+      title: "Remove widget",
+      action: () => console.log("Remove Widget"),
     },
   ];
+
   return (
-    <div className={style.container_my_task_home}>
+    <div className={`${style.container_my_task_home} ${style.card} ${size === "full" ? style.fullSize : style.halfSize}`}>
       <button
         className={style.ic_option_my_task_component}
         ref={buttonRef}
@@ -87,13 +111,14 @@ const MyTasKComponent = () => {
           <div className={style.component_text_my_task_icon}>
             <p>My Task</p>
             <button className={style.btn_protect_in_my_task}>
-              <img src={ic_protect}  />
+              <img src={ic_protect} alt="Protect" />
               <span className={style.tooltip_text_protect_my_task}>
                 Task you add here are private to you unless you add collaborators or
                 add the tasks to a shared project.
               </span>
             </button>
           </div>
+
           <div className={style.tabs}>
             <button
               onClick={() => setActiveTab("Upcoming")}
@@ -105,7 +130,7 @@ const MyTasKComponent = () => {
               onClick={() => setActiveTab("Overdue")}
               className={activeTab === "Overdue" ? style.active : ""}
             >
-              Overdue (1)
+              Overdue
             </button>
             <button
               onClick={() => setActiveTab("Completed")}
@@ -115,23 +140,31 @@ const MyTasKComponent = () => {
             </button>
           </div>
         </div>
-
       </div>
-      <div className={style.container_create_task_in_my_task}>
-        <div className={style.container_gr_create_task_in_my_task}>
-          <img src={ic_plus_gray} alt="Plus Icon" />
-          <p>Create task</p>
+      {activeTab === "Upcoming" && (
+        <div className={style.container_create_task_in_my_task}>
+          <div className={style.container_gr_create_task_in_my_task}>
+            <img src={ic_plus_gray} alt="Plus Icon" />
+            <p>Create task</p>
+          </div>
         </div>
-      </div>
+      )}
       <div className={style.my_list_task_component}>
-        {tasks.map((task, index) =>
-          task.status === activeTab ? (
-            <ListItemInMyTask
-              key={index}
-              nameproject={task.title}
-              timeproject={task.date}
-            />
-          ) : null
+        {convertedTasks.length > 0 ? (
+          convertedTasks.map((task) =>
+            task.status === activeTab ? (
+              <ListItemInMyTask
+                key={task._id}
+                id={task._id}
+                activeTab ={activeTab}
+                nameproject={task.title}
+                timeproject={task.date}
+                fetchTasks={fetchTasks}
+              />
+            ) : null
+          )
+        ) : (
+          <p>No tasks available for this tab.</p>
         )}
       </div>
     </div>

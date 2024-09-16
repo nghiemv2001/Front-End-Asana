@@ -1,12 +1,13 @@
 import ItemStack from "./ItemTaskComponent";
-import ic_close from '../../../assets/icons/ic_close.svg'
-import style from "./StackDirectionRow.module.css";
-
-import img_get_start_detail_image from "../../../assets/images/get_start_detail_image 1.png";
-import ic_arrow_rigt from "../../../assets/icons/ic_arr_right_gray.svg";
 import { useState } from "react";
 
+import ic_close from '../../../assets/icons/ic_close.svg'
+import img_get_start_detail_image from "../../../assets/images/get_start_detail_image 1.png";
+import ic_arrow_rigt from "../../../assets/icons/ic_arr_right_gray.svg";
+
+import style from "./StackDirectionRow.module.css";
 const StackDirectionRow = () => {
+
   const [activeStep, setActiveStep] = useState(2);
 
   const steps = [
@@ -29,8 +30,8 @@ const StackDirectionRow = () => {
             done={step.done}
             number={step.number}
             text={step.text}
-            active={activeStep === step.number} // Pass active state
-            onClick={() => setActiveStep(step.number)} // Set active step on click
+            active={activeStep === step.number} 
+            onClick={() => setActiveStep(step.number)} 
           />
         ))}
       </div>

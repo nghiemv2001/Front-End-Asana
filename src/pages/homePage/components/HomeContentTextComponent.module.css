@@ -1,7 +1,7 @@
 .home_page_context{
     height: calc(100vh - 48px);
     flex-grow: 1;
-    /* width: calc(100vw - 240px); */
+    width: calc(100vw - 240px);
     overflow-y: scroll;
     background-image: url("https://d3ki9tyy5l5ruj.cloudfront.net/obj/a0b52f278bf39ad6bbee745b64865a8cfd5bf4bf/Aqua_background.png");
 }
@@ -80,5 +80,40 @@
     grid-template-columns: 1fr 1fr;
     margin-top: 16px;
     width: 100%;
+}
+
+
+@media (max-width: 1150px){
+    .getting_started_container_right{
+       flex-direction: column;
+    }
+
+    .content_in_getting_started_container_right{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content_in_getting_started_container_right p{
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 870px){
+    .container_card_project_and_people{
+        flex-direction: column;
+    }
+
+
+    .container_card_project{
+        margin: 0;
+    
+    }
+}
+
+@media (max-width: 668px){
+    .getting_started_container_right{
+       display: none;
+    }
 }
 

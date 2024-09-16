@@ -17,12 +17,20 @@
 
 .main_list_item_in_task_left{
     display: flex;
+    border: 1px solid gray;
+    padding: 6px 2px;
+    margin-right: 8px;
+    border-radius: 30px;
     align-items: center;
     position: relative;
 }
 
+.main_list_item_in_task_left:hover{
+    background-color:rgb(158, 202, 158);
+}
+
 .main_list_item_in_task_left img{
-   margin: 0 12px;
+   margin: 0 4px;
 }
 
 .main_list_item_in_task_right{
@@ -47,4 +55,38 @@
     border-radius: 12px;
     font-size: 12px;
     color: white;
+}
+
+@media (max-width: 1150px){
+    .getting_started_container_right{
+       flex-direction: column;
+    }
+
+    .content_in_getting_started_container_right{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content_in_getting_started_container_right p{
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 870px){
+
+    .container_card_project{
+        margin: 0;
+    
+    }
+}
+
+@media (max-width: 668px){
+    .getting_started_container_right{
+       display: none;
+    }
+    
+    .main_list_item_in_task_right p{
+        display: none;
+    }
 }

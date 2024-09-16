@@ -4,29 +4,24 @@ import { OptionalSelect } from "./Optional";
 import './Optional.scss'
 
 export const CustomSelectMenu = ({ listOptional}) => {
-
-  const handleOptionClick = ()=>{
-  }
   const [alignRight, setAlignRight] = useState(false);
   const selectMenuRef = useRef(null);
-
+  const handleOptionClick = (action) => {
+    if (typeof action === 'function') {
+      action(); // Call the action function when an option is clicked
+    }
+  };
   useEffect(() => {
     const handlePosition = () => {
       const boundingBox = selectMenuRef.current.getBoundingClientRect();
       const windowWidth = window.innerWidth;
-
-      // Check if there's more space on the right, else align to the left
       if (boundingBox.right > windowWidth) {
         setAlignRight(true);
       } else {
         setAlignRight(false);
       }
     };
-
-    // Call the position check whenever the component is mounted or updated
     handlePosition();
-
-    // Optionally, you can add event listener for window resize if needed
     window.addEventListener("resize", handlePosition);
     return () => {
       window.removeEventListener("resize", handlePosition);
@@ -42,8 +37,9 @@ export const CustomSelectMenu = ({ listOptional}) => {
         key={option.title}
         src={option.src}
         title={option.title}
+        action={() => handleOptionClick(option.action)}
         className="optional-select"
-        onClick={() => handleOptionClick(option.title)}
+        
       />
     ))}
   </div>

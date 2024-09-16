@@ -2,11 +2,12 @@ import { useContext } from "react";
 import DrawerComponent from "../../components/drawer/drawer";
 import Header from "../../components/header/Header";
 import HomeContentTextComponent from "./components/HomeContentTextComponents";
-import "./HomePage.css";
 import { DrawerContext } from "../../context/useContext";
 
+import "./HomePage.css";
 
 const HomePage = () => {
+  
   const {isOpenDrawer, setIsOpenDrawer} = useContext(DrawerContext); 
 
   const toggleDrawer = () => {

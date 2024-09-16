@@ -1,13 +1,21 @@
 .container_my_task_home {
-    height: 400px;
+    min-height: 400px;
     width: 100%;
     background-color: white;
     border-radius: 16px;
     position: relative;
 }
 
+.halfSize {
+    grid-column: span 1;
+  }
+  
+  .fullSize {
+    grid-column: span 2;
+  }
+
 .container_my_task_home:hover {
-    padding: 4px;
+    padding: 2px;
 }
 
 .cotainer_header_my_task {
@@ -218,4 +226,47 @@
 
 .tabs button.active {
     border-bottom: 3px solid #6e6e6e;
+}
+
+@media (max-width: 1150px){
+    .getting_started_container_right{
+       flex-direction: column;
+    }
+
+    .content_in_getting_started_container_right{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content_in_getting_started_container_right p{
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 870px){
+
+    .container_card_project_and_people{
+        flex-direction: column;
+    }
+
+    .container_card_people{
+        margin: 0;
+        margin-top: 12px;
+    }
+
+    .container_card_project{
+        margin: 0;
+    
+    }
+}
+
+@media (max-width: 668px){
+    .getting_started_container_right{
+       display: none;
+    }
+    
+    .main_list_item_in_task_right p{
+        display: none;
+    }
 }

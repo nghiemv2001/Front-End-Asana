@@ -1,61 +1,75 @@
-.container_card_people{
-    height: 400px;
+.container_card_people {
+    width: 100%;
+    position: relative;
+    min-height: 400px;
     border-radius: 16px;
-    background-color: white;
+    background-color: white
 }
 
-.container_card_people:hover{
+.halfSize {
+    grid-column: span 1;
+}
+
+.fullSize {
+    grid-column: span 2;
+}
+
+.container_card_people:hover {
     padding: 4px;
 }
 
-.gr_button_frequet_collaboration{
+.gr_button_frequet_collaboration {
     display: flex;
     align-items: center;
-position: relative;
+    position: relative;
     padding: 4px 8px;
     margin-left: 8px;
 }
 
-.gr_button_frequet_collaboration:hover{
+.gr_button_frequet_collaboration img {
+    margin-left: 8px;
+}
+
+.gr_button_frequet_collaboration:hover {
     background-color: aliceblue;
     border-radius: 8px;
 }
-.head_container_card_people{
+
+.head_container_card_people {
     margin: 12px 0 0 12px;
     display: flex;
     position: relative;
     align-items: center;
 }
 
-.name_people{
+.name_people {
     color: black;
     font-size: 20px;
     font-weight: 600;
 }
 
-.title_people{
+.title_people {
     font-size: 12px;
     font-weight: 700;
     color: #b3afaf;
 }
 
-.head_container_card_people img{
-    margin-left: 16px;
+.head_container_card_people img {
     width: 10px;
 }
 
 
-.main_list_container_card_people{
-    flex-grow: 1;
-    display: grid;
-    gap: 32px;
-    grid-template-columns: auto auto;
-    width: 90%;
-    justify-content: center;
-    margin-top: 20px;
+.main_list_container_card_people {
+    width: 100%;
+    gap: 12px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-.item_in_list_card_people button{
+.item_in_list_card_people button {
     display: flex;
     align-items: center;
     width: 100%;
@@ -63,12 +77,12 @@ position: relative;
     flex-direction: row;
 }
 
-.item_in_list_card_people button img{
+.item_in_list_card_people button img {
     height: 50px;
     margin-right: 8px;
 }
 
-.item_in_list_card_people button div{
+.item_in_list_card_people button div {
     width: 120px;
     height: 22px;
     background-color: #371717;
@@ -76,8 +90,10 @@ position: relative;
     border-radius: 6px;
 }
 
-.gr_button_in_card_people{
+.gr_button_in_card_people {
     width: 100%;
+    position: absolute;
+    bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,7 +101,7 @@ position: relative;
     margin-top: 16px;
 }
 
-.invite_teammates{
+.invite_teammates {
     margin-top: 12px;
     border: gray solid 1px;
     border-radius: 6px;
@@ -93,3 +109,57 @@ position: relative;
     padding: 4px;
 }
 
+.btn_option_menu_card_people {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 24px;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.btn_option_menu_card_people img {
+    height: 16px;
+    width: 16px;
+}
+
+.btn_option_menu_card_people:hover {
+    background-color: aliceblue;
+}
+
+@media (max-width: 1150px){
+    .getting_started_container_right{
+       flex-direction: column;
+    }
+
+    .content_in_getting_started_container_right{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content_in_getting_started_container_right p{
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 870px){
+
+    .container_card_people{
+        margin: 0;
+        margin-top: 12px;
+    }
+
+    .container_card_project{
+        margin: 0;
+    
+    }
+}
+
+@media (max-width: 668px){
+    .getting_started_container_right{
+       display: none;
+    }
+
+}

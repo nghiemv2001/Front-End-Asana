@@ -95,3 +95,31 @@
     border-radius: 12px;
 }
 
+@media (max-width: 1150px){
+    .getting_started_container_right{
+       flex-direction: column;
+    }
+
+    .content_in_getting_started_container_right{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content_in_getting_started_container_right p{
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 870px){
+    .container_card_project{
+        margin: 0;
+    
+    }
+}
+
+@media (max-width: 668px){
+    .getting_started_container_right{
+       display: none;
+    }
+}

@@ -1,19 +1,44 @@
+import { useUpdateTask } from "../../../data/home/TaskAPI";
+import ic_check_has_broder from "../../../assets/icons/ic_check.svg";
 import style from "./ListItemInMyTask.module.css";
 
-import ic_check_has_broder from "../../../assets/icons/ic_check_has_border_gray.svg";
+const ListItemInMyTask = ({
+  nameproject,
+  timeproject,
+  id,
+  fetchTasks,
+  activeTab = activeTab,
+}) => {
+  const { updateTask } = useUpdateTask(id);
 
-const ListItemInMyTask = ({ nameproject, timeproject }) => {
+  const handleFinishTask = async (event) => {
+    event.preventDefault();
+
+    try {
+      await updateTask({ status: true });
+      await fetchTasks();
+    } catch (err) {
+      console.error("Error Update:", err);
+    }
+  };
+
   return (
     <div className={style.main_list_item_in_task}>
-    <button className={style.main_list_item_in_task_left}>
-      <img src={ic_check_has_broder} alt="Check Icon" />
+      {activeTab === "Upcoming" ? (
+        <button
+          className={style.main_list_item_in_task_left}
+          onClick={handleFinishTask}
+        >
+          <img src={ic_check_has_broder} alt="Check Icon" />
+        </button>
+      ) : null}
+
       <p>{nameproject}</p>
-    </button>
-    <div className={style.main_list_item_in_task_right}>
-      <button>Cross-fu...</button>
-      <p>{timeproject}</p>
+      <div className={style.main_list_item_in_task_right}>
+        <button>Cross-fu...</button>
+        <p>{timeproject}</p>
+      </div>
     </div>
-  </div>
   );
 };
 
