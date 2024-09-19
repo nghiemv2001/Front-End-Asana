@@ -1,5 +1,5 @@
 .container_my_task_home {
-    min-height: 400px;
+    height: 400px;
     width: 100%;
     background-color: white;
     border-radius: 16px;
@@ -15,7 +15,7 @@
   }
 
 .container_my_task_home:hover {
-    padding: 2px;
+    border: 1px solid rgb(206, 204, 204);
 }
 
 .cotainer_header_my_task {
@@ -93,12 +93,23 @@
     height: 48px;
 }
 
+
+.button_submit{
+    display: none;
+}
 .container_gr_create_task_in_my_task {
     display: flex;
+    align-items: center;
     padding: 0;
     justify-content: space-around;
     margin-left: 20px;
     padding: 4px 10px;
+}
+
+.container_create_task_input{
+    display: flex;
+    padding: 4px 0;
+    border-bottom: 1px solid rgb(205, 205, 205);
 }
 
 .container_create_task_in_my_task p {
@@ -119,12 +130,28 @@
 .my_list_task_component {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    height: 250px;
+    overflow-y: scroll;
     margin-left: 12px;
     width: 95%;
     border-top: 1px solid rgb(192, 190, 190);
 }
+
+.my_list_task_component::-webkit-scrollbar{
+    width: 5px;
+}
+
+.my_list_task_component::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.my_list_task_component::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px; 
+    border: 1px solid transparent;
+}
+
 
 .ic_option_my_task_component {
     display: flex;
@@ -228,6 +255,69 @@
     border-bottom: 3px solid #6e6e6e;
 }
 
+.main_list_item_in_task{
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 37px;
+    flex-direction: row;
+    padding: 0 24px;
+    outline: none;
+}
+
+.conatiner_create_task{
+    display: flex;
+    align-items: center;
+    padding: 0px 0;
+    border-bottom: #c1c1c3 solid 1px;
+}
+
+.conatiner_ic_date_time_picker{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    padding: 4px;
+    border:dashed 1px gray;
+    border-radius: 20px;
+}
+
+.conatiner_ic_date_time_picker:hover{
+    background-color: #6e6e6e;
+}
+
+.style_form{
+    display: flex;
+    align-items: center;
+    
+}
+
+.button_ic_remove{
+    margin-left: 20px;
+     border-radius: 12px;
+     padding: 4px;
+}
+
+.button_ic_remove img{
+    width: 22px;
+     height: fit-content;
+   
+}
+
+.button_ic_remove:hover{
+    background-color: #edeaea;
+}
+
+.input_in_create_task{
+    border: none;
+    outline: none;
+    width: 340px;
+}
+
+
+.hide-datepicker-input .ant-picker-input {
+    display: none; /* Ẩn trường input */
+  }
 @media (max-width: 1150px){
     .getting_started_container_right{
        flex-direction: column;

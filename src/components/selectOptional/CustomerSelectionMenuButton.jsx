@@ -8,7 +8,7 @@ export const CustomSelectMenu = ({ listOptional}) => {
   const selectMenuRef = useRef(null);
   const handleOptionClick = (action) => {
     if (typeof action === 'function') {
-      action(); // Call the action function when an option is clicked
+      action();
     }
   };
   useEffect(() => {

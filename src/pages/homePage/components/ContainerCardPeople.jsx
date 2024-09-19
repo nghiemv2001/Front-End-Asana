@@ -13,10 +13,13 @@ import ic_plus from "../../../assets/icons/ic_plus.svg";
 import ic_remove from "../../../assets/icons/ic_trash.svg";
 
 import style from "./ContainerCardPeople.module.css";
+import { ItemPeople } from "./ItemPeople";
 
 export const ContainerCardPeople = ({size,  toggleHalfSize, toggleFullSize}) => {
+
   const buttonRef = useRef(null);
   const buttonMenuOptionRef = useRef(null);
+  
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
@@ -45,10 +48,6 @@ export const ContainerCardPeople = ({size,  toggleHalfSize, toggleFullSize}) => 
       src: "",
       title: "Recent collaborators",
     },
-    {
-      src: "",
-      title: "Starred collaborators",
-    }
   ];
   const listOptional = [
     {
@@ -71,6 +70,21 @@ export const ContainerCardPeople = ({size,  toggleHalfSize, toggleFullSize}) => 
     },
   ];
 
+  const peopleList = [
+    {
+      image : img_people_3,
+      email : 'nghiemV2001@gmail'
+    },
+    {
+      image : img_people_2,
+      email : 'nghiemV2001@gmail'
+    },
+    {
+      image : img_people_1,
+      email : 'nghiemV2001@gmail'
+    }
+  ]
+
   return (
     <div className={ `${style.container_card_people} ${style.card} 
       ${size === "full" ? style.fullSize : style.halfSize}`}>
@@ -90,24 +104,15 @@ export const ContainerCardPeople = ({size,  toggleHalfSize, toggleFullSize}) => 
         </button>
       </div>
       <div className={style.main_list_container_card_people}>
-        <div className={style.item_in_list_card_people}>
+        <div className={style.item_invite_people}>
           <button>
-            <img src={img_people_1} alt="Person 1" />
-            <div></div>
-          </button>
+            <img  src={ic_plus}/>
+           </button>  
+           <p>Invite people</p>
         </div>
-        <div className={style.item_in_list_card_people}>
-          <button>
-            <img src={img_people_2} alt="Person 2" />
-            <div></div>
-          </button>
-        </div>
-        <div className={style.item_in_list_card_people}>
-          <button>
-            <img src={img_people_3} alt="Person 3" />
-            <div></div>
-          </button>
-        </div>
+        {peopleList.map((person, index) => (
+         <ItemPeople key={index} image={person.image} email={person.email}  />
+      ))}
       </div>
       <div className={style.gr_button_in_card_people}>
         <button className={style.collaborate_in_Asana}>

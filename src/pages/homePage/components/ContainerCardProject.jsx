@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { useOutsideClick } from "../../../hooks/customHook/UseOutsideClick ";
 import { CustomSelectMenu } from "../../../components/selectOptional/CustomerSelectionMenuButton";
 
-//Import ICON&IMAGE
 import style from "./ContainerCardProject.module.css";
 import ic_arr_down_gray from "../../../assets/icons/ic_arr_dwon_gray.svg";
 import ic_project from "../../../assets/icons/ic_project_drawer_blue.svg";
@@ -14,10 +13,12 @@ import ic_check from "../../../assets/icons/ic_check.svg";
 import ic_menu from "../../../assets/icons/ic_menu_options.svg";
 
 export const ContainerCardProject = ({ size, toggleFullSize, toggleHalfSize }) => {
+    const buttonRef = useRef(null);
+  const buttonmenuRef = useRef(null);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const buttonRef = useRef(null);
-  const buttonmenuRef = useRef(null);
+
 
   useOutsideClick(buttonRef, () => {
     setIsOpen(false);
@@ -41,7 +42,7 @@ export const ContainerCardProject = ({ size, toggleFullSize, toggleHalfSize }) =
       title: "Recents",
     },
     {
-      src: ic_plus,
+      src: "",
       title: "Starred",
     },
   ];
@@ -97,6 +98,30 @@ export const ContainerCardProject = ({ size, toggleFullSize, toggleHalfSize }) =
         <div className={style.item_in_list_card_project}>
           <button>
             <img src={plus_has_broder_gray} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
+            <p>Create project</p>
+          </button>
+        </div>
+        <div className={style.item_in_list_card_project}>
+          <button>
+            <img src={ic_project} />
             <p>Create project</p>
           </button>
         </div>
