@@ -6,13 +6,30 @@
     width: 100%;
     height: 37px;
     flex-direction: row;
-    padding: 0 24px;
-
+    padding: 10px 24px;
 }
+
 
 .main_list_item_in_task:hover{
     background-color: rgb(199, 199, 195);
-    padding: 0px;
+    
+}
+
+.button_ic_remove{
+     border-radius: 12px;
+     padding: 4px;
+     margin-right: 12px;
+}
+
+.button_ic_remove img{
+    width: 16px;
+     height: fit-content;
+     
+   
+}
+
+.button_ic_remove:hover{
+    background-color: #d0d0d0;
 }
 
 .main_list_item_in_task_left{
@@ -26,7 +43,7 @@
 }
 
 .main_list_item_in_task_left:hover{
-    background-color:rgb(158, 202, 158);
+    background-color:rgb(193, 197, 193);
 }
 
 .main_list_item_in_task_left img{
@@ -35,28 +52,79 @@
 
 .main_list_item_in_task_right{
     position: absolute;
-    display: flex;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 300px 110px;
     align-items: center;
-    height: 100%;
     right: 24px;
 }
+.main_list_item_in_task_right > :first-child {
+    justify-self: end;
+}
+
+.container_list_project_button{
+    display: flex;
+}
+
+.person_assigin_button{
+    width: 45px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #99DFDB; 
+    border-radius: 12px; 
+    margin-right: 4px; 
+    font-size: 12px; 
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 4px;
+}
+
+.person_assigin_button_more{
+    width: 25px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #99DFDB; 
+    border-radius: 12px; 
+    margin-right: 4px; 
+    font-size: 12px; 
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 4px;
+}
+
 
 .main_list_item_in_task_right p{
     color: #6D6E6F;
-    font-size: 12;
+    font-size: 14px;
     margin-left: 4px;
+    color: black;
+    padding-left: 8px;
 }
 
-.main_list_item_in_task_right button{
-    width: 75px;
-    display: flex;
-    justify-content: center;
-    background-color: #99DFDB;
-    border-radius: 12px;
-    font-size: 12px;
-    color: white;
+
+
+.text_title_project{
+    display: inline-block;
+    max-width: 40%; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container_create_task_input{
+    border-bottom: 1px solid black;
+    background-color: #6D6E6F;
 }
 
+
+.ant-picker-input input{
+    display: none;
+}
 @media (max-width: 1150px){
     .getting_started_container_right{
        flex-direction: column;
@@ -69,6 +137,10 @@
 
     .content_in_getting_started_container_right p{
         text-align: center;
+    }
+
+    .main_list_item_in_task_right{
+        display: none;
     }
 }
 

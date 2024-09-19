@@ -1,7 +1,7 @@
 .container_card_people {
     width: 100%;
     position: relative;
-    min-height: 400px;
+    height: 400px;
     border-radius: 16px;
     background-color: white
 }
@@ -15,7 +15,7 @@
 }
 
 .container_card_people:hover {
-    padding: 4px;
+    border: 1px solid rgb(206, 204, 204);
 }
 
 .gr_button_frequet_collaboration {
@@ -60,13 +60,29 @@
 
 
 .main_list_container_card_people {
-    width: 100%;
-    gap: 12px;
+    width: 99%;
+    height: 250px;
+    gap: 28px;
+    overflow-y: scroll;
     display: flex;
     align-items: start;
     justify-content: start;
     flex-wrap: wrap;
     padding: 20px;
+}
+
+.main_list_container_card_people::-webkit-scrollbar{
+    width: 3px;
+}
+
+.main_list_container_card_people::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.main_list_container_card_people::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px; 
+    border: 1px solid transparent;
 }
 
 .item_in_list_card_people button {
@@ -102,11 +118,16 @@
 }
 
 .invite_teammates {
+    flex: 1;
     margin-top: 12px;
     border: gray solid 1px;
     border-radius: 6px;
     width: fit-content;
-    padding: 4px;
+    padding: 8px 12px;
+}
+
+.invite_teammates:hover{
+    background-color: rgb(230, 229, 229);
 }
 
 .btn_option_menu_card_people {
@@ -128,6 +149,32 @@
     background-color: aliceblue;
 }
 
+.item_invite_people{
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    width: 250px;
+}
+
+.item_invite_people:hover{
+    background-color: #ebebeb;
+    border-radius: 8px;
+}
+
+.item_invite_people button{
+    width: 50px;
+    height: 50px;
+    border: 1px black dashed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+}
+
+.item_invite_people p{
+    margin-left: 12px;
+    font-size: 16px;
+}
 @media (max-width: 1150px){
     .getting_started_container_right{
        flex-direction: column;
