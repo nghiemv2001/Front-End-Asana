@@ -5,20 +5,22 @@ import ic_check_has_broder from "../../../assets/icons/ic_check.svg";
 import ic_close from "../../../assets/icons/ic_remove.svg";
 
 import style from "./ListItemInMyTask.module.css";
+import { useState } from "react";
 
 const ListItemInMyTask = ({
   nameproject,
   timeproject,
   showInput = showInput,
   id,
+  start_date ,
   projects,
   fetchTasks,
   activeTab = activeTab,
 }) => {
-
   const { updateTask } = useUpdateTask(id);
   const maxVisibleProjects = 2;
-  
+  const [datePiecker, setDatePiecker] = useState(timeproject);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchTasks();
@@ -36,7 +38,7 @@ const ListItemInMyTask = ({
   const handleFinishTask = async (event) => {
     event.preventDefault();
     try {
-      await updateTask({ status: true });
+      await updateTask({ status: true});
       await fetchTasks();
     } catch (err) {
       console.error("Error Update:", err);
@@ -88,17 +90,32 @@ const ListItemInMyTask = ({
             )}
           </div>
         ) : (
-          <div style={{ width: "10px" }}></div>
+          <div className={style.container_time_start_end_date}>
+            <p >{new Date(start_date).toLocaleDateString()}</p>
+            {timeproject  ===null ? null:  <p>{new Date(datePiecker).toLocaleDateString()}</p>}
+           
+          </div>
         )}
-        {timeproject !== null &&
-        activeTab !== "Upcoming" &&
-        activeTab !== "Completed" ? (
-          <p
-            className={style.time_project_over_due}
-            style={{ color: activeTab === "Overdue" ? "red" : "black" }}
-          >
-            {timeproject}
-          </p>
+        {timeproject !== null && activeTab !== "Completed" ? (
+          <div className={style.container_text_day_icon}>
+            {timeproject ? (
+              <p style={{ color: activeTab === 'Upcoming' ? 'black' : 'red'}}>{new Date(datePiecker).toLocaleDateString()}</p>
+            ) : null}
+            <DatePicker
+              className=""
+              style={{
+                display: "flex",
+                width: 0,
+                paddingRight: "40px",
+                
+              }}
+              onChange={(dateString) => {
+                const dateObject = new Date(dateString.format("YYYY-MM-DD"));
+                setDatePiecker(dateObject);
+                updateTimeTask(dateString);
+              }}
+            />
+          </div>
         ) : (
           activeTab !== "Completed" && (
             <form onSubmit={handleSubmit}>
@@ -107,8 +124,12 @@ const ListItemInMyTask = ({
                   outline: "none",
                   boxShadow: "none",
                   border: "none",
+                  width: 0,
+                  paddingRight: "40px",
                 }}
                 onChange={(dateString) => {
+                  const dateObject = new Date(dateString.format("YYYY-MM-DD"));
+                  setDatePiecker(dateObject);
                   updateTimeTask(dateString);
                 }}
               />

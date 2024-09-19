@@ -25,17 +25,23 @@ const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Upcoming");
   const { data, fetchTasks } = useFetchTasks();
-  const [task, setTask] = useState({ title: "", due_date: null });
+  const [task, setTask] = useState({
+    title: "",
+    due_date: null,
+    start_date: new Date(),
+  });
   const [tasks, setTasks] = useState([]);
   const [showInput, setShowInput] = useState(false);
+
   useOutsideClick(buttonRef, () => setIsOpen(false));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (task.title) {
       try {
+        console.log("api front", task);
         await createNewTask(task);
-        setTask({ title: "", due_date: null });
+        setTask({ title: "", due_date: null, start_date: new Date() });
         setShowInput(false);
         fetchTasks();
       } catch (err) {
@@ -87,6 +93,7 @@ const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
             _id: task._id,
             id: index + 1,
             title: task.title,
+            start_date: task.start_date,
             projects: task.projects,
             due_date: task.due_date === null ? null : `${formattedDate}`,
             status: status,
@@ -209,27 +216,25 @@ const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
                 onChange={(e) => setTask({ ...task, title: e.target.value })}
                 autoFocus
               />
-              <DatePicker
-                className=""
-                style={{
-                  fontSize: "1px",
-                  outline: "none",
-                  boxShadow: "none",
-                  border: "none",
-                  display: "flex",
-                  position: "absolute",
-                  right: "22px",
-                }}
-                onChange={(date) => {
-                  if (date) {
-                    const dateObject = new Date(date.format("YYYY-MM-DD"));
-                    setTask((prevTask) => ({
-                      ...prevTask,
-                      due_date: dateObject,
-                    }));
-                  }
-                }}
-              />
+              <div className={style.container_text_day_icon}>
+                {task.due_date ? (
+                  <p>{new Date(task.due_date).toLocaleDateString()}</p>
+                ) : null}
+                <DatePicker
+                  className=""
+                  style={{ display: "flex", width: 0, paddingRight: "40px" }}
+                  onChange={(date) => {
+                    if (date) {
+                      const dateObject = new Date(date.format("YYYY-MM-DD"));
+
+                      setTask((prevTask) => ({
+                        ...prevTask,
+                        due_date: dateObject,
+                      }));
+                    }
+                  }}
+                />
+              </div>
             </form>
           </div>
         )}
@@ -240,6 +245,7 @@ const MyTasKComponent = ({ size, toggleFullSize, toggleHalfSize }) => {
                 key={task._id}
                 id={task._id}
                 activeTab={activeTab}
+                start_date={task.start_date}
                 nameproject={task.title}
                 timeproject={task.due_date}
                 projects={task.projects}

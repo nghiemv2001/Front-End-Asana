@@ -288,6 +288,7 @@
 
 .style_form{
     display: flex;
+
     align-items: center;
     
 }
@@ -306,6 +307,17 @@
 
 .button_ic_remove:hover{
     background-color: #edeaea;
+}
+
+.container_text_day_icon{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 40px;
+}
+
+.container_text_day_icon p{
+    margin-right: 8px;
 }
 
 .input_in_create_task{
