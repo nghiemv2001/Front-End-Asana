@@ -15,6 +15,22 @@
     
 }
 
+.container_text_day_icon{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: -20px;
+}
+
+.container_text_day_icon p{
+    margin-right: 8px;
+}
+
+.container_time_start_end_date{
+    position: absolute;
+    display: flex;
+}
+
 .button_ic_remove{
      border-radius: 12px;
      padding: 4px;
